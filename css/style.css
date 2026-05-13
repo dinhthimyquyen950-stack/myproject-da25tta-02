@@ -1,0 +1,81 @@
+
+ body {
+        font-family: "poppins",Arial, sans-serif;/* Font chữ */
+        background: #ffe6f0;/* Màu nền hồng nhạt */
+        margin: 0;/* Xóa khoảng cách mặc định */
+    }
+
+    /* Khung chính */
+    .container {
+        width: 70%;/* Chiều rộng 70% màn hình */
+        margin: 30px auto; /* Canh giữa */
+        background: #fff0f5;/* Màu nền khung */
+        padding: 20px;/* Khoảng cách bên trong */
+        border-radius: 10px; /* Bo góc */
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);/* Đổ bóng */
+        text-align: center;/* Căn giữa chữ */
+    }
+  
+    /* Ảnh đại diện */
+    img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; /* Làm tròn ảnh */
+        object-fit: cover; /* Ảnh không bị méo */
+        display: block;
+        margin: 0 auto 15px;/* Canh giữa + cách dưới */
+        border: 4px solid #ff99cc; /* Viền ảnh */
+    
+    }
+
+    h1 {
+        color: #d63384;
+        margin: 100px 0;/* margin: tạo khoảng cách bên ngoài của phần tử */
+        
+    }
+
+    h3 {
+        color: #9c27b0;
+        margin-top: 20px;/* margin: tạo khoảng cách bên ngoài của phần tử */
+    }
+
+    /* Định dạng đoạn thông tin */
+    .info p {
+        margin: 5px 0;/* margin: tạo khoảng cách bên ngoài của phần tử */
+    }
+    ul,ol{
+    text-align:left;}
+
+
+    /* Bảng */
+    table {
+        width: 100%;
+        border-collapse:collapse;/* Gộp viền */
+        margin-top: 10px;
+    }
+    
+    /* Ô bảng */
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+	text-align:center
+	
+    }
+
+    /* Tiêu đề bảng */
+    th {
+        background: #ff99cc;
+        color: white;
+	text-align:center;
+    }
+
+    .links a {
+        display: inline-block;/* Hiển thị dạng nút */
+        margin: 10px;
+        padding: 8px 15px;
+        background: #d63384;
+        color: white;
+        text-decoration: none;/* Bỏ gạch chân */
+        border-radius: 5px;
+    }
+
