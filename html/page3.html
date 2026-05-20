@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Form Đăng Ký CLB </title>
+    <link rel="stylesheet" href="../css/style3.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="frmDangki">
+            <h2 id="title">ĐĂNG KÍ THÀNH VIÊN CLB </h2>
+
+            <div class="form-group">
+                <label for="txtUsername">Họ và tên:</label>
+                <input class="form-control" type="text" id="txtUsername" name="txtUsername">
+            </div>
+            <div class="form-group">
+                <label>Giới tính:</label><br>
+
+                <input type="radio" id="male" name="gender">
+                <label for="male">Nam</label>
+
+                <input type="radio" id="female" name="gender">
+                <label for="female">Nữ</label>
+            </div>
+			
+			<div class="form-group">
+                <label for="txtDate">Ngày sinh:</label>
+                <input class="form-control" type="date" id="txtDate" name="txtDate">
+            </div>
+			
+            <div class="form-group">
+                <label for="txtEmail">Email:</label>
+                <input class="form-control" type="email" id="txtEmail" name="txtEmail">
+            </div>
+			
+			<div class="form-group">
+                <label for="txtDiachi">Địa chỉ:</label>
+                <input class="form-control" type="email" id="txtDiachi" name="txtDiachi">
+            </div>
+			
+            <div class="form-group">
+                <label for="txtPhonenumber">Số điện thoại:</label>
+                <input class="form-control" type="text" id="txtPhonenumber" name="txtPhonenumber">
+            </div>
+
+			<div class="form-group">
+			
+				<label>Sở thích:</label>
+				<div class="hobbies">
+				
+				<input type="checkbox" id="reading" name="hobbies" value="reading">
+				<label for="reading">Đọc sách</label>
+				
+				<input type="checkbox" id="music" name="hobbies" value="music">
+				<label for="music">Nghe nhạc</label>
+
+				<input type="checkbox" id="travel" name="hobbies" value="travel">
+				<label for="travel">Du lịch</label>
+				</div>
+			</div>
+			
+            <input class="form-button" type="submit"id="sbDangki" name="sbDangki" value="Đăng kí tham gia CLB">
+
+            
+        </form>
+    </div>
+</body>
+</html>
+
