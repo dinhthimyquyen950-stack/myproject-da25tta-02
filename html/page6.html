@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Tính diện tích hình chữ nhật </title>
+</head>
+<body>
+	<script>
+	let d;
+	let r;
+	
+	do{
+		d = Number(prompt("Hãy nhập chiều dài hình chữ nhật ( dài > rộng ): "));
+		r = Number(prompt("Hãy nhập chiều rộng hình chữ nhật: "));
+	}while(r>d);
+	if(r<d)
+		window.alert("Diện tích hình chữ nhật là " + d*r);
+	else
+		window.alert("TRƯỜNG HỢP ĐẶC BIỆT: Diện tích hình vuông là: "+ d*r);
+	
+	</script>
+</body>
+</html>
