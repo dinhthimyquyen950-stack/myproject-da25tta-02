@@ -1,0 +1,92 @@
+/* Toàn trang */
+body {
+    background: linear-gradient(135deg, #ffeef5, #f5f7ff);
+    font-family: Arial, sans-serif;
+    padding: 30px 0;
+}
+
+/* Khung chứa sản phẩm */
+#product-list {
+    display: flex;
+    justify-content: center;
+}
+
+/* Card sản phẩm */
+.item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: 750px;
+    background: #d8b5d7;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Khung ảnh */
+.image {
+    flex: 1;
+    text-align: center;
+}
+
+.image img {
+    width: 100%;
+    max-width: 180px;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.image img:hover {
+    transform: scale(1.05);
+}
+
+/* Thông tin */
+.info {
+    flex: 2;
+}
+
+.card-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #e91e63 !important;
+}
+
+.info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Nút xem chi tiết */
+.btn-info {
+    background: linear-gradient(45deg, #00bcd4, #2196f3);
+    border: none;
+    color: white !important;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn-info:hover {
+    background: linear-gradient(45deg, #2196f3, #00bcd4);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image img {
+        max-width: 220px;
+    }
+}
