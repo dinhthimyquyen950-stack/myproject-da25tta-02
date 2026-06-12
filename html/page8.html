@@ -4,77 +4,21 @@
     <meta charset="utf-8">
     <title>Thiết kế trang giới thiệu thông tin sản phẩm</title>
 	<link rel="stylesheet" href="../css/style5.css">
+    
     <!--Latest compiled and minified CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
 	<!--Latest compiled JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/lib.js"></script>
 </head>
 <body>
     <div class="container">
-        <div id="product-list"></div>
+        <div id="product-list" class="row"></div>
     </div>
 
     <script>
-        //xác định khung chứa product-list
-        const listProduct = document.getElementById("product-list");
-
-        //tạo 1 container có class ="item"
-        const item = document.createElement("div");
-        item.setAttribute("class", "item");
-
-        //tạo 2 khung chứa hình ảnh và thông tin
-        //tạo 1 container chứa hình ảnh có class
-        const containerImage = document.createElement("div");
-        containerImage.setAttribute("class", "image");
-
-        //tạo ảnh
-        const img = document.createElement("img");
-        img.setAttribute("src", "../assets/images/vongtay.webp");
-        img.setAttribute("alt", "Vòng tay handmade");
-        img.setAttribute("style", "width:100%; max-width:150px;");
-        img.setAttribute("class","card-img-top .rounded-circle");
-
-        //đưa vào khung chứa ảnh
-        containerImage.appendChild(img);
-         
-        //tạo 1 container chứa thông tin sản phẩm
-        const containerInfo = document.createElement("div");
-        containerInfo.setAttribute("class", "info");
-
-        //tạo <p> chứa tên sản phẩm
-        const nameProduct = document.createElement("p");
-        nameProduct.innerHTML = "<h1><b>Tên sản phẩm: Vòng tay handmade</b></h1>";
-        nameProduct.setAttribute("class","card-title text-dark")
-
-        // tạo <p> chứa giá sản phẩm
-        const price = document.createElement("p");
-        price.innerHTML = "<b>Giá:</b> 34k/1 chiếc";
-
-        //tạo <p> chưa mô tả ngắn
-        const description = document.createElement("p");
-        description.innerHTML =
-            "<b>Mô tả:</b> <br>Vòng tay handmade dây rút ba màu: hồng phấn, hồng nhạt và vàng.<br> Tông màu ấm, nhẹ nhàng cùng hạt gốm và hạt ngọc đủ màu sắc.<br> Thích hợp đeo cùng nhóm bạn, đi chơi, chụp ảnh.";
-
-        //tạo <a> chứa liên kiết
-        const linkProduct = document.createElement("a");
-        linkProduct.innerHTML = "Xem chi tiết";
-        linkProduct.setAttribute("href", "page8.html");
-        linkProduct.setAttribute("class", "btn btn-info");
-
-
-
-        //gắn 4 con vào khung chứa info
-        containerInfo.appendChild(nameProduct);
-        containerInfo.appendChild(price);
-        containerInfo.appendChild(description);
-        containerInfo.appendChild(linkProduct);
-
-        //thêm khung chứa image vào item
-        item.appendChild(containerImage);
-        item.appendChild(containerInfo);
-
-        //thêm item vào list product
-        listProduct.appendChild(item);
-		listProduct.setAttribute( "style", "color:black;" );
+        loadAllProducts(products);
     </script>
 </body>
 </html>

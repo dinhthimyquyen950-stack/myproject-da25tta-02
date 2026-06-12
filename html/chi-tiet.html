@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Chi tiết sản phẩm</title>
+
+    <link rel="stylesheet" href="../css/style5.css">
+
+
+</head>
+
+<body>
+
+    <div class="container" id="container">
+
+        <img src="" alt="" id="image">
+
+        <h2 id="name"></h2>
+
+        <p id="price"></p>
+
+        <p id="description"></p>
+
+        <a href="index.html" class="back">
+            Quay lại
+        </a>
+
+    </div>
+
+    <!-- Nạp file chứa products -->
+    <script src="../js/lib.js"></script>
+
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const productId = urlParams.get("masp");
+
+        const foundProduct = products.find(
+            obj => obj.id == productId
+        );
+
+        if(foundProduct){
+
+            document.getElementById("name").innerHTML =
+                foundProduct.name;
+
+            document.getElementById("price").innerHTML =
+                foundProduct.price + " / sản phẩm";
+
+            document.getElementById("description").innerHTML =
+                foundProduct.description;
+
+            document.getElementById("image").src =
+                foundProduct.image;
+
+            document.getElementById("image").alt =
+                foundProduct.name;
+        }
+        else{
+
+            document.getElementById("container").innerHTML =
+            `
+                <h2>Sản phẩm không tồn tại hoặc đã bị xóa!</h2>
+
+                <a href="index.html">
+                    Quay lại trang chủ
+                </a>
+            `;
+        }
+
+    </script>
+
+</body>
+</html>
