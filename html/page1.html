@@ -1,70 +1,101 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
-	<head>
-		<title>Trang thông tin cá nhân</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet"href="../css/style.css">
-		
-	</head>
-	<body>
-	<div class="container">
-		<h1>Trang thông tin cá nhân</h1>
-		<h2> Đinh Thị Mỹ Quyên </h2>
 
-		<div class="intro-box">
-			<div class="intro-image">
-				<img src="../assets/images/tulip.jpg" alt="Avatar">
-			</div>
-			<div class="intro-text">
-		<h3> Giới thiệu bản thân </h3>
-		<p> Xin chào! Tôi tên <b>Đinh Thị Mỹ Quyên</b><br>Sinh viên ngành <b> Công nghệ thông tin</b>.Tôi yêu thích<i> lập trình và thiết kế web</i>. 
-		Mục tiêu của tôi là trở thành một lập trình viên chuyên nghiệp. 
-		Tôi đang học tại <b>Đại học Trà Vinh</b>. 
-		Tôi luôn cố gắng học tập và rèn luyện kỹ năng mỗi ngày để phát triển bản thân hơn</p>
-			</div>
-		</div>
-		<!-- Hoạt động -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang thông tin cá nhân</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
 
-       <h3><u>Thông tin chi tiết</u></h3>
-      <table>
-         <tr>
-            <th><b>Thông tin cá nhân </b></th>
-            <th>Nội dung</th>
-         </tr>
-         <tr>
-            <td><b>Họ và tên</b></td>
-            <td>Đinh Thị Mỹ Quyên</td>
-        </tr>
-        <tr>
-            <td><b>Lớp</b></td>
-            <td>DA25TTA</td>
-        </tr>
-	<tr>
-            <td><b>MSSV</b></td>
-            <td>110125141</td>
-        </tr>
-         <tr>
-            <td><b>Trường</b></td>
-            <td>Đại học Trà Vinh</td>
-        </tr>
-     </table>
-	
-	<h3><u>Sở thích</u></h3>
-	<p> Nấu ăn 👩‍🍳 • Nghe nhạc🎶 • Đi du lịch🧳 • Xem phim 🍿</p>
+<body>
+    <main class="container">
+        <a class="back-link" href="../index.html">Về trang chủ</a>
 
-	<h3><u>Kỹ năng và mục tiêu</u></h3>
-		<p>Biết HTML cơ bản</p>
-		<p>Đang học CSS và JavaCript</p>
-		<p>Chơi thể thao</p>
-	
-	<h3><u>Liên hệ</u></h3>
-    <div class="links">
-        <!-- target="_blank" mở tab mới -->
-        <a href="https://facebook.com" target="_blank">📘 Facebook</a>
-		<a href="https://instagram.com" target="_blank">📷 Instagram</a>
-        <!-- mailto: để gửi email -->
-		<a href="mailto:dinhthimyquyen950@gmail.com">✉️ Email</a>
-        </div>
- </div>
-	</body>
+        <section class="profile">
+            <div class="profile-image">
+                <img src="../assets/images/tulip.jpg" alt="Ảnh đại diện">
+            </div>
+
+            <div class="profile-content">
+                <p class="eyebrow">Sinh viên Công nghệ thông tin</p>
+                <h1>Đinh Thị Mỹ Quyên</h1>
+                <p class="intro">
+                    Sinh viên ngành Công nghệ thông tin.Tôi yêu thích lập trình và thiết kế web. Mục tiêu của tôi là trở
+                    thành một lập trình viên chuyên nghiệp. Tôi đang học tại Đại học Trà Vinh. Tôi luôn cố gắng học tập
+                    và rèn luyện kỹ năng mỗi ngày để phát triển bản thân hơn
+                </p>
+
+                <div class="profile-tags" aria-label="Điểm nổi bật">
+                    <span>HTML cơ bản</span>
+                    <span>Đang học CSS</span>
+                    <span>Yêu thích thiết kế web</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section info-section">
+            <div class="section-title">
+                <p class="eyebrow">Hồ sơ</p>
+                <h2>Thông tin chi tiết</h2>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <span>Họ và tên</span>
+                    <strong>Đinh Thị Mỹ Quyên</strong>
+                </div>
+                <div class="info-item">
+                    <span>Lớp</span>
+                    <strong>DA25TTA</strong>
+                </div>
+                <div class="info-item">
+                    <span>MSSV</span>
+                    <strong>110125141</strong>
+                </div>
+                <div class="info-item">
+                    <span>Trường</span>
+                    <strong>Đại học Trà Vinh</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="section two-columns">
+            <div class="soft-box">
+                <h2>Sở thích</h2>
+                <ul>
+                    <li>Nấu ăn và thử các món mới</li>
+                    <li>Nghe nhạc khi học bài</li>
+                    <li>Đi du lịch, chụp ảnh</li>
+                    <li>Xem phim để thư giãn</li>
+                </ul>
+            </div>
+
+            <div class="soft-box">
+                <h2>Kỹ năng và mục tiêu</h2>
+                <ul>
+                    <li>Nắm được HTML cơ bản</li>
+                    <li>Đang học CSS và JavaScript</li>
+                    <li>Muốn tự thiết kế được website đẹp, dễ dùng</li>
+                    <li>Mục tiêu trở thành lập trình viên chuyên nghiệp</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section contact-section">
+            <div>
+                <p class="eyebrow">Kết nối</p>
+                <h2>Liên hệ</h2>
+                <p class="contact-note">Bạn có thể liên hệ qua các kênh bên dưới.</p>
+            </div>
+
+            <div class="links">
+                <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                <a href="mailto:dinhthimyquyen950@gmail.com">Email</a>
+            </div>
+        </section>
+    </main>
+</body>
+
 </html>

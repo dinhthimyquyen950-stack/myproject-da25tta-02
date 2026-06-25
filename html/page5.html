@@ -2,14 +2,65 @@
 <html lang="vi">
 <head>
     <meta charset="utf-8">
-    <title>Nhập dữ liệu với prompt() và hiển thị với alert() </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập dữ liệu và tính tuổi</title>
+    <link rel="stylesheet" href="../css/style4.css">
 </head>
 <body>
-	<script>
-	let name = prompt("Hãy nhập vào tên của bạn vàooo đâyy iii  ");
-	let yob = Number(prompt("Hãy nhập năm sinh của bạn vào nhen  "));
-	window.alert("Xin chào " + name + ", năm nay bạn đã " + (2026-yob) + " tuổi rồi đóaaaaaa.");
-	</script>
+    <main class="simple-page">
+        <a class="back-link" href="../index.html">Về trang chủ</a>
+
+        <section class="panel">
+            <p class="eyebrow">JavaScript</p>
+            <h1>Nhập dữ liệu</h1>
+            <p class="guide-text">Nhập tên và năm sinh của bạn để chương trình tính tuổi.</p>
+
+            <form class="calc-form" id="ageForm">
+                <label for="fullname">Tên của bạn</label>
+                <input id="fullname" type="text" placeholder="Ví dụ: Mỹ Quyên" required>
+
+                <label for="birthYear">Năm sinh</label>
+                <input id="birthYear" type="number" min="1900" max="2026" placeholder="Ví dụ: 2007" required>
+
+                <button class="action-button" type="submit">Tính tuổi</button>
+            </form>
+
+            <p class="result" id="result">Kết quả sẽ hiển thị tại đây.</p>
+        </section>
+    </main>
+
+    <script>
+        const ageForm = document.getElementById("ageForm");
+        const fullname = document.getElementById("fullname");
+        const birthYear = document.getElementById("birthYear");
+        const result = document.getElementById("result");
+        const currentYear = new Date().getFullYear();
+
+        birthYear.max = currentYear;
+
+        ageForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const nameValue = fullname.value.trim();
+            const yearValue = Number(birthYear.value);
+
+            if (!nameValue) {
+                result.textContent = "Bạn hãy nhập tên trước nhé.";
+                fullname.focus();
+                return;
+            }
+
+            if (!yearValue || yearValue < 1900 || yearValue > currentYear) {
+                result.textContent = "Năm sinh phải nằm trong khoảng từ 1900 đến " + currentYear + ".";
+                birthYear.focus();
+                return;
+            }
+
+            const age = currentYear - yearValue;
+            const message = "Xin chào " + nameValue + ", năm nay bạn " + age + " tuổi.";
+            result.textContent = message;
+            window.alert(message);
+        });
+    </script>
 </body>
 </html>
-

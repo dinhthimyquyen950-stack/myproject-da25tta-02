@@ -2,14 +2,32 @@
 <html lang="vi">
 <head>
     <meta charset="utf-8">
-    <title>Hiển thị thông báo </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị lời chào</title>
+    <link rel="stylesheet" href="../css/style4.css">
 </head>
 <body>
-	<p id ="name"> Mỹ Quyên </p>
-	<script>
-	const obj = document.getElementById("name");
-	window.alert("Xin chào" + obj.innerHTML + "! Hôm nay bạn thế nào?");
-	</script>
+    <main class="simple-page">
+        <a class="back-link" href="../index.html">Về trang chủ</a>
+        <section class="panel">
+            <p class="eyebrow">JavaScript</p>
+            <h1>Hiển thị lời chào</h1>
+            <p id="name">Mỹ Quyên</p>
+            <p class="result" id="result">Bấm nút bên dưới để hiển thị lời chào.</p>
+            <button class="action-button" id="btnHello" type="button">Hiển thị lời chào</button>
+        </section>
+    </main>
+
+    <script>
+        const obj = document.getElementById("name");
+        const result = document.getElementById("result");
+        const btnHello = document.getElementById("btnHello");
+
+        btnHello.addEventListener("click", function () {
+            const message = "Xin chào " + obj.textContent.trim() + "! Hôm nay bạn thế nào?";
+            result.textContent = message;
+            window.alert(message);
+        });
+    </script>
 </body>
 </html>
-

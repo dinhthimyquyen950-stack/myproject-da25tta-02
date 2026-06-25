@@ -1,24 +1,50 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
-	<head>
-		<title>Trang số 2</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="../css/style3.css">
-	</head>
-	<body>
-		<div class="container">
-			<form id="frmLogin">
-				<h2 id="title">Sign up to</h2>
-				<div class="form-group">
-					<label for ="txtUsername">Username:</label>
-					<input class="form-control"type="text" id="txtUsername"name="txtUsername">
-		        </div>
-				<div class ="form-group">
-					<label for="txtPassword">Password:</label>
-					<input class="form-control"type="password"id="txtPassword" name="txtPassword">
-				</div>
-				<input class="form-button" type="submit"id="sbLogin" name="sbLogin" value="Login">
-				<input class="form-button" type="reset"id="rsCancel" name="rsCancel" value="Cancel">
-			</form>
-	</body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu mẫu đăng nhập</title>
+    <link rel="stylesheet" href="../css/style3.css">
+</head>
+<body>
+    <main class="page">
+        <a class="back-link" href="../index.html">Về trang chủ</a>
+
+        <form class="form-card" id="frmLogin">
+            <p class="eyebrow">Tài khoản</p>
+            <h1>Đăng nhập</h1>
+
+            <div class="form-group">
+                <label for="txtUsername">Tên đăng nhập</label>
+                <input class="form-control" type="text" id="txtUsername" name="txtUsername" placeholder="Nhập tên đăng nhập" required>
+            </div>
+
+            <div class="form-group">
+                <label for="txtPassword">Mật khẩu</label>
+                <input class="form-control" type="password" id="txtPassword" name="txtPassword" placeholder="Nhập mật khẩu" required>
+            </div>
+
+            <div class="form-actions">
+                <button class="form-button primary" type="submit">Đăng nhập</button>
+                <button class="form-button secondary" type="reset">Làm lại</button>
+            </div>
+
+            <p class="form-message" id="loginMessage" aria-live="polite"></p>
+        </form>
+    </main>
+
+    <script>
+        const loginForm = document.getElementById("frmLogin");
+        const loginMessage = document.getElementById("loginMessage");
+
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            loginMessage.textContent = "Bạn đã nhập đầy đủ thông tin đăng nhập.";
+        });
+
+        loginForm.addEventListener("reset", function () {
+            loginMessage.textContent = "";
+        });
+    </script>
+</body>
 </html>

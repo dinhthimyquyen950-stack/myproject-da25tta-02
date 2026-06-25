@@ -2,22 +2,51 @@
 <html lang="vi">
 <head>
     <meta charset="utf-8">
-    <title>Tính diện tích hình chữ nhật </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính diện tích hình chữ nhật</title>
+    <link rel="stylesheet" href="../css/style4.css">
 </head>
 <body>
-	<script>
-	let d;
-	let r;
-	
-	do{
-		d = Number(prompt("Hãy nhập chiều dài hình chữ nhật ( dài > rộng ): "));
-		r = Number(prompt("Hãy nhập chiều rộng hình chữ nhật: "));
-	}while(r>d);
-	if(r<d)
-		window.alert("Diện tích hình chữ nhật là " + d*r);
-	else
-		window.alert("TRƯỜNG HỢP ĐẶC BIỆT: Diện tích hình vuông là: "+ d*r);
-	
-	</script>
+    <main class="simple-page">
+        <a class="back-link" href="../index.html">Về trang chủ</a>
+        <section class="panel">
+            <p class="eyebrow">JavaScript</p>
+            <h1>Tính diện tích</h1>
+
+            <form class="calc-form" id="areaForm">
+                <label for="length">Chiều dài</label>
+                <input id="length" type="number" min="0.1" step="0.1" placeholder="Ví dụ: 8" required>
+
+                <label for="width">Chiều rộng</label>
+                <input id="width" type="number" min="0.1" step="0.1" placeholder="Ví dụ: 5" required>
+
+                <button class="action-button" type="submit">Tính diện tích</button>
+            </form>
+
+            <p class="result" id="result">Nhập chiều dài và chiều rộng để xem kết quả.</p>
+        </section>
+    </main>
+
+    <script>
+        const areaForm = document.getElementById("areaForm");
+        const result = document.getElementById("result");
+
+        areaForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const d = Number(document.getElementById("length").value);
+            const r = Number(document.getElementById("width").value);
+
+            if (d > 0 && r > 0) {
+                const area = d * r;
+                const message = d === r
+                    ? "Diện tích hình vuông là: " + area
+                    : "Diện tích hình chữ nhật là: " + area;
+                result.textContent = message;
+            } else {
+                result.textContent = "Chiều dài và chiều rộng phải là số lớn hơn 0.";
+            }
+        });
+    </script>
 </body>
 </html>

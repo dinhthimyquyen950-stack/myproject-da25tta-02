@@ -2,70 +2,73 @@
 <html lang="vi">
 <head>
     <meta charset="utf-8">
-    <title>Form Đăng Ký CLB </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form đăng ký CLB</title>
     <link rel="stylesheet" href="../css/style3.css">
 </head>
-
 <body>
-    <div class="container">
-        <form id="frmDangki">
-            <h2 id="title">ĐĂNG KÍ THÀNH VIÊN CLB </h2>
+    <main class="page">
+        <a class="back-link" href="../index.html">Về trang chủ</a>
+
+        <form class="form-card wide" id="frmDangki">
+            <p class="eyebrow">Câu lạc bộ</p>
+            <h1>Đăng ký thành viên</h1>
 
             <div class="form-group">
-                <label for="txtUsername">Họ và tên:</label>
-                <input class="form-control" type="text" id="txtUsername" name="txtUsername">
+                <label for="txtUsername">Họ và tên</label>
+                <input class="form-control" type="text" id="txtUsername" name="txtUsername" placeholder="Nhập họ và tên" required>
             </div>
+
             <div class="form-group">
-                <label>Giới tính:</label><br>
-
-                <input type="radio" id="male" name="gender">
-                <label for="male">Nam</label>
-
-                <input type="radio" id="female" name="gender">
-                <label for="female">Nữ</label>
+                <span class="label-title">Giới tính</span>
+                <div class="choice-row">
+                    <label><input type="radio" name="gender" value="Nam" required> Nam</label>
+                    <label><input type="radio" name="gender" value="Nữ"> Nữ</label>
+                </div>
             </div>
-			
-			<div class="form-group">
-                <label for="txtDate">Ngày sinh:</label>
-                <input class="form-control" type="date" id="txtDate" name="txtDate">
-            </div>
-			
+
             <div class="form-group">
-                <label for="txtEmail">Email:</label>
-                <input class="form-control" type="email" id="txtEmail" name="txtEmail">
+                <label for="txtDate">Ngày sinh</label>
+                <input class="form-control" type="date" id="txtDate" name="txtDate" required>
             </div>
-			
-			<div class="form-group">
-                <label for="txtDiachi">Địa chỉ:</label>
-                <input class="form-control" type="email" id="txtDiachi" name="txtDiachi">
-            </div>
-			
+
             <div class="form-group">
-                <label for="txtPhonenumber">Số điện thoại:</label>
-                <input class="form-control" type="text" id="txtPhonenumber" name="txtPhonenumber">
+                <label for="txtEmail">Email</label>
+                <input class="form-control" type="email" id="txtEmail" name="txtEmail" placeholder="ten@example.com" required>
             </div>
 
-			<div class="form-group">
-			
-				<label>Sở thích:</label>
-				<div class="hobbies">
-				
-				<input type="checkbox" id="reading" name="hobbies" value="reading">
-				<label for="reading">Đọc sách</label>
-				
-				<input type="checkbox" id="music" name="hobbies" value="music">
-				<label for="music">Nghe nhạc</label>
+            <div class="form-group">
+                <label for="txtDiachi">Địa chỉ</label>
+                <input class="form-control" type="text" id="txtDiachi" name="txtDiachi" placeholder="Nhập địa chỉ">
+            </div>
 
-				<input type="checkbox" id="travel" name="hobbies" value="travel">
-				<label for="travel">Du lịch</label>
-				</div>
-			</div>
-			
-            <input class="form-button" type="submit"id="sbDangki" name="sbDangki" value="Đăng kí tham gia CLB">
+            <div class="form-group">
+                <label for="txtPhonenumber">Số điện thoại</label>
+                <input class="form-control" type="tel" id="txtPhonenumber" name="txtPhonenumber" placeholder="Nhập số điện thoại">
+            </div>
 
-            
+            <div class="form-group">
+                <span class="label-title">Sở thích</span>
+                <div class="choice-row">
+                    <label><input type="checkbox" name="hobbies" value="reading"> Đọc sách</label>
+                    <label><input type="checkbox" name="hobbies" value="music"> Nghe nhạc</label>
+                    <label><input type="checkbox" name="hobbies" value="travel"> Du lịch</label>
+                </div>
+            </div>
+
+            <button class="form-button primary full" type="submit">Đăng ký tham gia CLB</button>
+            <p class="form-message" id="registerMessage" aria-live="polite"></p>
         </form>
-    </div>
+    </main>
+
+    <script>
+        const registerForm = document.getElementById("frmDangki");
+        const registerMessage = document.getElementById("registerMessage");
+
+        registerForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            registerMessage.textContent = "Đăng ký thành công. Cảm ơn bạn đã tham gia CLB!";
+        });
+    </script>
 </body>
 </html>
-

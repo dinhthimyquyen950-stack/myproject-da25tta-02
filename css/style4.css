@@ -1,51 +1,216 @@
-/* style3.css */
-body{
-    font-family: Arial, sans-serif;
-    background-color: #FFF0F5;
+:root {
+    --bg: #fff7fb;
+    --paper: #ffffff;
+    --text: #392d35;
+    --muted: #786b73;
+    --pink: #e66a9f;
+    --pink-dark: #c8467b;
+    --peach: #ffb48f;
+    --mint: #9bd9c7;
+    --blue: #8db7f2;
+    --line: #f2cedd;
+    --radius: 18px;
+    --radius-lg: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
-    padding: 30px;
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    color: var(--text);
+    background:
+        linear-gradient(135deg, rgba(141, 183, 242, 0.16) 0 18%, transparent 18% 100%),
+        linear-gradient(180deg, #fffafd 0%, var(--bg) 54%, #f7fcff 100%);
 }
 
-h1{
-    text-align: center;
-    color: #800080;
-    margin-bottom: 25px;
+.simple-page,
+.invoice-page {
+    width: min(1060px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 36px 0 48px;
 }
 
-table{
-    width: 50%;
-    margin: auto;
+.simple-page {
+    max-width: 720px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    margin-bottom: 22px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 8px 18px rgba(200, 70, 123, 0.2);
+}
+
+.panel {
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 18px 45px rgba(201, 86, 129, 0.12);
+    animation: fadeUp 0.55s ease both;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--pink-dark);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+h1 {
+    margin: 0 0 18px;
+    font-size: 40px;
+}
+
+.result,
+#name {
+    margin: 0;
+    color: var(--muted);
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.guide-text {
+    margin: -6px 0 18px;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+#name {
+    color: var(--text);
+    font-weight: 800;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+table {
+    width: 100%;
+    min-width: 760px;
     border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    overflow: hidden;
+    background: #ffffff;
 }
 
-th{
-    background-color: #DDA0DD;
-    color: white;
-    padding: 12px;
+.action-button {
+    min-height: 42px;
+    margin-top: 18px;
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(200, 70, 123, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(200, 70, 123, 0.26);
+}
+
+.calc-form {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.calc-form label {
+    color: #4a3340;
+    font-weight: 800;
+}
+
+.calc-form input {
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #fffafd;
+    color: var(--text);
+    font-family: inherit;
     font-size: 16px;
 }
 
-td{
-    padding: 12px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+.calc-form input:focus {
+    border-color: var(--pink);
+    background: #ffffff;
+    outline: 3px solid rgba(230, 106, 159, 0.18);
 }
 
-tr:hover{
-    background-color: #f1f1f1;
+th,
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+}
+
+th {
+    background: #fff0f6;
+    color: var(--pink-dark);
+}
+
+td:nth-child(1),
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(6),
+th:nth-child(1),
+th:nth-child(3),
+th:nth-child(4),
+th:nth-child(6) {
+    text-align: center;
+}
+
+tr:nth-child(even) td {
+    background: #fffbfd;
 }
 
 .thanhtien,
-#thanhtoan{
-    font-weight: bold;
-    color: #e53935;
+#thanhtoan {
+    color: #c8467b;
+    font-weight: 800;
 }
 
-tr:last-child{
-    background-color: #DA70D6;
-    font-size: 18px;
+.total-row td {
+    background: #fff4ea;
+    font-weight: 800;
+}
+
+@media (max-width: 640px) {
+    .panel {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
